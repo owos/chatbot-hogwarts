@@ -1,4 +1,4 @@
-# Chatbot Hogwarts
+# Chatbot Hogwarts :speech_balloon:
 ## Informações
 - Autor : João Paulo Wakugawa 
 - API : <a href="http://hp-api.herokuapp.com/">Harry-Potter</a>
@@ -11,7 +11,7 @@ O chatbot recepciona o usuário em Hogwarts e oferece um tour pela escola, o us�
 
 ---
 
-# Desenvolvimento
+# Desenvolvimento :red_circle:
 ## Actions 
 ### action_show_character 
 Responsável por selectionar um personagem aleátorio da api, mostrar o personagem e guardá-lo no banco de dados.
@@ -55,7 +55,7 @@ $ okteto stack deploy --build // Buildando do docker-compose
 
 ---
 
-## Tecnologias e depêndencias
+## Tecnologias e depêndencias :books:
 - <a href="https://rasa.com/docs/rasa/installation/">Rasa</a>
 - <a href="https://docs.python.org/3/">Python</a>
 - <a href="https://docs.mongodb.com/">MongoDB</a>
