@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  rasa:
+    image: rasa/rasa:3.0.4-full
+    container_name: rasa
+    ports:
+      - 5005:5005
+    networks:
+      - production
+    depends_on:
+      - actions
+    volumes:
+      - ./:/app
+    command:
+      - run 
+      - --enable-api
+      - --cors
+      - "*"
+
+  actions:
+    image: jpwakugawa/harry-actions
+    container_name: actions
+    ports:
+      - 5055:5055
+    networks:
+      - production
+
+  web:
+    build:
+      context: ./web
+      dockerfile: web.Dockerfile
+    image: web
+    container_name: web
+    ports:
+      - 8080:8080
+    networks:
+      - production
+    depends_on:
+      - rasa
+      - actions
+
+  ngrok:
+    image: shkoliar/ngrok:latest
+    ports:
+      - 4551:4551
+    links:
+      - rasa
+    environment:
+      - DOMAIN=rasa
+      - PORT=5005
+
+networks: 
+    production:
+        driver: bridge
