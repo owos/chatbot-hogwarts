@@ -1,11 +1,12 @@
 # Chatbot Hogwarts
-## Autor : João Paulo Wakugawa 
-## API : <a href="http://hp-api.herokuapp.com/">Harry-Potter</a>
-## Link do Okteto : <a href="https://web-jpwakugawa.cloud.okteto.net/">Chat de Hogwarts</a>
+## Informações
+- Autor : João Paulo Wakugawa 
+- API : <a href="http://hp-api.herokuapp.com/">Harry-Potter</a>
+- Link do Okteto : <a href="https://web-jpwakugawa.cloud.okteto.net/">Chat de Hogwarts</a>
 
 ---
 
-## História
+## Funcionamento
 O chatbot recepciona o usuário em Hogwarts e oferece um tour pela escola, o usúario pode escolher a entre as casas Grifinória, Sonserina, Corvinal e Lufa-lufa, feito isso o bot seleciona um personagem aleátorio da casa escolhida para acompanhar o convidado, também é possível vizualizar o histórico dos personagens que acompanharam os convidados.
 
 ---
