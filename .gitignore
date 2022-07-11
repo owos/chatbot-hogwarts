@@ -4,6 +4,8 @@ actions/secrets.py
 *.dot
 .rasa/cache
 actions/__pycache__
+.config
+.keras
 
 # Dockerfile
 .ipynb
