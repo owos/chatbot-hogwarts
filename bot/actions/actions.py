@@ -16,8 +16,8 @@ from random import randint
 from pymongo import MongoClient
 
 client = MongoClient(secrets["CLUSTER"])
-db = client["database"]
-collection = db["historico"]
+db = client[secrets["DB_NAME"]]
+collection = db[secrets["COL_NAME"]]
 
 #############
 # FUNCTIONS #
