@@ -2,11 +2,10 @@
 models/
 actions/secrets.py
 *.dot
-*.html
 .rasa/cache
 actions/__pycache__
+
 # Dockerfile
-index.html
 .ipynb
 .csv
 *.ipynb
@@ -19,6 +18,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+
 # C extensions
 *.so
 
@@ -147,6 +147,7 @@ dmypy.json
 
 # Node dependencies
 node_modules/
+package-lock.json
 
 # Okteto
 .stignore
@@ -158,3 +159,6 @@ node_modules/
 # VIM
 *.swp
 *.swo
+
+# Secrets
+secrets.py
