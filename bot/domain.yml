@@ -1,0 +1,75 @@
+version: "3.0"
+
+intents:
+  - request_tour
+  - request_history
+  - change_escort
+  - give_house
+  - give_name
+  - thanks
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+
+entities:
+  - house
+  - name
+
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text 
+      conditions:
+      - active_loop: init_form
+        requested_slot: name
+
+  house:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: house
+
+forms:
+  init_form:
+    required_slots:
+    - name
+    - house
+
+responses:
+  utter_greet:
+  - text: "Seja bem-vindo a Hogwarts, me informe caso queira um tour pela escola."
+
+  utter_goodbye:
+  - text: "Foi um prazer conversar contigo, aproveite o tour."
+  - text: "Até mais, tenha uma boa estadia."
+
+  utter_iamabot:
+  - text: "Eu sou um bot-mágico, abastecido por Hogwarts."
+  
+  utter_ask_name:
+  - text: "Qual o seu nome?"
+  - text: "Como posso te chamar?"
+
+  utter_ask_house:
+  - text: "Qual casa você deseja conhecer {name}?"
+  - text: "Me informe a casa que deseja visitar {name}."
+
+  utter_yr_welcome:
+  - text: "Pode contar comigo."
+  - text: "Foi um prazer ajudar."
+
+  utter_form_submitted:
+  - text: "Certo, deseja conhecer a pessoa que vai te acompanhar?"
+
+actions:
+  - action_show_character
+  - action_show_history
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
