@@ -61,7 +61,6 @@ responses:
   - text: "Como posso te chamar?"
 
   utter_ask_house:
-  - text: "Qual casa você deseja conhecer {name}?"
   - text: "Me informe a casa que deseja visitar {name}."
     buttons:
     - title: "Grifinória"
@@ -79,6 +78,11 @@ responses:
 
   utter_form_submitted:
   - text: "Certo, deseja conhecer a pessoa que vai te acompanhar?"
+    buttons:
+    - title: "Sim"
+      payload: "/affirm"
+    - title: "Não"
+      payload: "/deny"
 
 actions:
   - action_show_character
