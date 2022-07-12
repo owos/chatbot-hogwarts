@@ -42,10 +42,15 @@ forms:
 
 responses:
   utter_greet:
-  - text: "Seja bem-vindo a Hogwarts, me informe caso queira um tour pela escola."
+  - text: "Seja bem-vindo a Hogwarts, deseja um tour pela escola?"
+    buttons:
+    - title: "Sim"
+      payload: "/request_tour"
+    - title: "Não"
+      payload: "/goodbye"
 
   utter_goodbye:
-  - text: "Foi um prazer conversar contigo, aproveite o tour."
+  - text: "Foi um prazer conversar contigo, aproveite a visita."
   - text: "Até mais, tenha uma boa estadia."
 
   utter_iamabot:
