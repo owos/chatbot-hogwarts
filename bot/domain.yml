@@ -45,9 +45,9 @@ responses:
   - text: "Seja bem-vindo a Hogwarts, deseja um tour pela escola?"
     buttons:
     - title: "Sim"
-      payload: "/request_tour"
+      payload: '/request_tour'
     - title: "Não"
-      payload: "/goodbye"
+      payload: '/goodbye'
 
   utter_goodbye:
   - text: "Foi um prazer conversar contigo, aproveite a visita."
@@ -63,6 +63,15 @@ responses:
   utter_ask_house:
   - text: "Qual casa você deseja conhecer {name}?"
   - text: "Me informe a casa que deseja visitar {name}."
+    buttons:
+    - title: "Grifinória"
+      payload: '/give_house{{"house": "grifinoria"}}'
+    - title: "Sonserina"
+      payload: '/give_house{{"house": "sonserina"}}'
+    - title: "Lufa-lufa"
+      payload: '/give_house{{"house": "lufa-lufa"}}'
+    - title: "Corvinal"
+      payload: '/give_house{{"house": "corvinal"}}'
 
   utter_yr_welcome:
   - text: "Pode contar comigo."
