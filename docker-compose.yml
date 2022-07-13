@@ -4,17 +4,18 @@ services:
   # ================================= Bot =====================================
   # Generic Rasa bot, used to run console for example.
   bot:
+    # public: true
     build:
       context: .
       dockerfile: ./docker/bot.Dockerfile
-    depends_on:
-      - actions
-    networks: 
-      - production
-    # public: true
-    restart: unless-stopped
+    container_name: bot
     ports:
       - 5005:5005
+    networks:
+      - production
+    depends_on:
+      - actions
+    restart: unless-stopped
     command: run --enable-api --cors "*"
   # ================================= Actions =================================
   # Rasa middleware used to connect with external APIs.
@@ -22,6 +23,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/actions.Dockerfile
+    container_name: actions
     ports:
       - 5055:5055
     networks:
@@ -32,6 +34,7 @@ services:
     build:
       context: . 
       dockerfile: ./docker/web.Dockerfile
+    container_name: web
     ports:
       - 3000:3000
     networks:
