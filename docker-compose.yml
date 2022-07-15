@@ -2,9 +2,9 @@ version: "3"
 
 services:
   # ================================= Bot =====================================
-  # Generic Rasa bot, used to run console for example.
+  # Rasa bot, used to run console for example.
   bot:
-    # public: true
+    public: true
     build:
       context: .
       dockerfile: ./docker/bot.Dockerfile
@@ -13,8 +13,6 @@ services:
       - 5005:5005
     networks:
       - production
-    depends_on:
-      - actions
     restart: unless-stopped
     command: run --enable-api --cors "*"
   # ================================= Actions =================================
