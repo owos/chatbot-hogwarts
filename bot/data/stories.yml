@@ -4,9 +4,9 @@ stories:
 
 - story: Caminho principal 
   steps:
-  - intent: greet
+  - intent: greet_intent
   - action: utter_greet
-  - intent: request_tour
+  - intent: tour_intent 
   - action: init_form
   - active_loop: init_form
   - slot_was_set:

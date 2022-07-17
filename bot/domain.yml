@@ -1,17 +1,16 @@
 version: "3.0"
 
 intents:
-  - request_tour
-  - request_history
-  - change_escort
-  - give_house
-  - give_name
-  - thanks
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - bot_challenge
+  - tour_intent
+  - history_intent
+  - change_escort_intent
+  - choose_house_intent
+  - thanks_intent
+  - greet_intent
+  - goodbye_intent
+  - affirm_intent
+  - deny_intent
+  - bot_challenge_intent
 
 entities:
   - house
@@ -42,12 +41,12 @@ forms:
 
 responses:
   utter_greet:
-  - text: "Seja bem-vindo a Hogwarts, deseja um tour pela escola?"
+  - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"
     buttons:
-    - title: "Sim"
-      payload: '/request_tour'
-    - title: "Não"
-      payload: '/goodbye'
+    - title: "Tour na escola"
+      payload: '/tour_intent'
+    - title: "Fato divertido"
+      payload: '/goodbye_intent'
 
   utter_goodbye:
   - text: "Foi um prazer conversar contigo, aproveite a visita."
@@ -63,13 +62,13 @@ responses:
   - text: "Me informe a casa que deseja visitar {name}."
     buttons:
     - title: "Grifinória"
-      payload: '/give_house{{"house": "grifinoria"}}'
+      payload: '/choose_house_intent{{"house": "grifinoria"}}'
     - title: "Sonserina"
-      payload: '/give_house{{"house": "sonserina"}}'
+      payload: '/choose_house_intent{{"house": "sonserina"}}'
     - title: "Lufa-lufa"
-      payload: '/give_house{{"house": "lufa-lufa"}}'
+      payload: '/choose_house_intent{{"house": "lufa-lufa"}}'
     - title: "Corvinal"
-      payload: '/give_house{{"house": "corvinal"}}'
+      payload: '/choose_house_intent{{"house": "corvinal"}}'
 
   utter_yr_welcome:
   - text: "Pode contar comigo."

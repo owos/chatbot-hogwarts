@@ -4,22 +4,22 @@ rules:
 
 - rule: Usuário diz tchau 
   steps:
-  - intent: goodbye
+  - intent: goodbye_intent
   - action: utter_goodbye
 
 - rule: Usuário pergunta se é um bot
   steps:
-  - intent: bot_challenge
+  - intent: bot_challenge_intent
   - action: utter_iamabot
 
 - rule: Usuário agradece
   steps:
-  - intent: thanks
+  - intent: thanks_intent
   - action: utter_yr_welcome
 
 - rule: Usuário deseja ver o histórico
   steps:
-  - intent: request_history
+  - intent: history_intent 
   - action: action_show_history
 
 - rule: Submeter formúlario
