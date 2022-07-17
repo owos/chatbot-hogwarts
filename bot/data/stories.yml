@@ -2,7 +2,7 @@ version: "3.0"
 
 stories:
 
-- story: Caminho principal 
+- story: Tour pela escola 
   steps:
   - intent: greet_intent
   - action: utter_greet
@@ -10,13 +10,13 @@ stories:
   - action: init_form
   - active_loop: init_form
   - slot_was_set:
-    - requested_slot: name
+    - requested_slot: name_slot
   - slot_was_set:
-    - name: Pedro
+    - name_slot: Pedro
   - slot_was_set:
-    - requested_slot: house
+    - requested_slot: house_slot
   - slot_was_set:
-    - house: grifinoria
+    - house_slot: grifinoria
   - slot_was_set:
     - requested_slot: null
   - active_loop: null

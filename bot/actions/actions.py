@@ -44,7 +44,7 @@ class ActionShowCharacter(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
-        casa = tracker.get_slot("house")
+        casa = tracker.get_slot("house_slot")
         house = verify_house(casa.lower())
 
         # Fazendo a requisição na API
