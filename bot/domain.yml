@@ -51,7 +51,6 @@ responses:
 
   utter_goodbye:
   - text: "Foi um prazer conversar contigo, aproveite a visita."
-  - text: "Até mais, tenha uma boa estadia."
 
   utter_iamabot:
   - text: "Eu sou um bot-mágico, abastecido por Hogwarts."
@@ -76,13 +75,6 @@ responses:
   - text: "Pode contar comigo."
   - text: "Foi um prazer ajudar."
 
-  utter_form_submitted:
-  - text: "Certo, deseja conhecer a pessoa que vai te acompanhar?"
-    buttons:
-    - title: "Sim"
-      payload: "/affirm"
-    - title: "Não"
-      payload: "/deny"
 
 actions:
   - action_show_character
