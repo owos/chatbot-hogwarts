@@ -17,12 +17,12 @@ rules:
   - intent: thanks_intent
   - action: utter_yr_welcome
 
-- rule: Usuário deseja ver o histórico
+- rule: Usuário deseja ver o histórico de acompanhante
   steps:
   - intent: history_intent 
   - action: action_show_history
 
-- rule: Submeter formúlario
+- rule: Submeter formúlario com casa escolhida
   condition:
   - active_loop: init_form
   steps:
@@ -30,4 +30,4 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_show_character 
+  - action: action_show_character
