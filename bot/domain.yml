@@ -42,9 +42,16 @@ responses:
   utter_greet:
   - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"
     buttons:
-    - title: "Tour na escola"
+    - title: "Tour pela escola"
       payload: '/tour_intent'
+
     - title: "Fato divertido"
+      payload: '/goodbye_intent'
+
+    - title: "Pesquisar personagem"
+      payload: '/goodbye_intent'
+
+    - title: "Nenhuma das opções"
       payload: '/goodbye_intent'
 
   utter_goodbye:
