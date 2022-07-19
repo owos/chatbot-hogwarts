@@ -1,4 +1,10 @@
-# Chatbot Hogwarts :speech_balloon:
+<h1 align="center">Chatbot Hogwarts :speech_balloon:</h1>
+<p align="center">
+<img src = https://img.shields.io/badge/RASA-Chatbot-blueviolet>
+<img src = https://img.shields.io/badge/NLP-Machine%20learning-blue>
+<img src = https://img.shields.io/badge/Python-Linguagem%20-brightgreen>
+</p>
+
 ## Informações
 - Autor : João Paulo Wakugawa 
 - API : <a href="http://hp-api.herokuapp.com/">Harry-Potter</a>
@@ -9,25 +15,35 @@
 ## Funcionalidades
 - [x] Fornecer tour pela escola
 - [ ] Contar fatos divertidos
-- [ ] Pesquisar um personagem específico
+- [ ] Pesquisar personagem específico
 
 ---
 
-## Utilizando o Rasa
+## Projeto Local 
+### Rasa
 - Siga `bot`:
     ```bash
-    rasa init            # Criando uma pasta com config iniciais
-    rasa train           # Treinando o modelo
-    --fixed-model-name   # Flag para gerar modelo com nome específico
-    rasa run actions     # Lembrar de reiniciar sempre que houver alterações
-    rasa shell           # Testando as funcionalidades do modelo
-    -vv                  # Flag para mostrar mais detalhes
-    rasa interactive     # Auxilia na definição de uma story 
+    rasa train
+    rasa run --enable-api --cors "*"
     ```
 
----
+### Rasa SDK
+- Siga `bot` > `actions`:<br>
+Adicione um arquivo **secrets.py** com as informações do seu cluster.
+    ```python3
+    secrets = {
+        "CLUSTER": "your_cluster",
+        "DB_NAME": "your_database",
+        "COL_NAME": "your_collection"
+    }
+    ```
 
-## Utilizando o Webchat
+- Siga `bot`:
+    ```bash
+    rasa run actions
+    ```
+
+### Webchat
 - Siga `web`:
     ```bash
     npm i
@@ -36,8 +52,8 @@
 
 ---
 
-## Utilizando o Okteto
-- Comando para deployar:
+## Okteto
+- Comando para deploy:
     ```bash
     okteto stack deploy --build
     ```
