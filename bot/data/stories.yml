@@ -22,3 +22,11 @@ stories:
   - active_loop: null
   - action: action_show_character
 
+- story: Fatos curiosos
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - intent: fun_fact_intent
+  - action: utter_fun_fact
+  - intent: deny_intent
+  - action: utter_goodbye

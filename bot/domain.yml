@@ -2,6 +2,7 @@ version: "3.0"
 
 intents:
   - tour_intent
+  - fun_fact_intent
   - history_intent
   - change_escort_intent
   - choose_house_intent
@@ -39,6 +40,14 @@ forms:
     - house_slot
 
 responses:
+  utter_fun_fact:
+  - text: "Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né? Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas.\nDeseja saber mais?"
+    buttons:
+    - title: "Sim"
+      payload: '/fun_fact_intent'
+    - title: "Não"
+      payload: '/deny_intent'
+
   utter_greet:
   - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"
     buttons:
@@ -46,7 +55,7 @@ responses:
       payload: '/tour_intent'
 
     - title: "Fato divertido"
-      payload: '/goodbye_intent'
+      payload: '/fun_fact_intent'
 
     - title: "Pesquisar personagem"
       payload: '/goodbye_intent'

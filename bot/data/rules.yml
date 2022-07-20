@@ -17,6 +17,11 @@ rules:
   - intent: thanks_intent
   - action: utter_yr_welcome
 
+- rule: Usuário deseja saber uma curiosidade
+  steps:
+  - intent: fun_fact_intent
+  - action: utter_fun_fact
+
 - rule: Usuário deseja ver o histórico de acompanhante
   steps:
   - intent: history_intent 
