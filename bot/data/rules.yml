@@ -21,6 +21,7 @@ rules:
   steps:
   - intent: fun_fact_intent
   - action: utter_fun_fact
+  - action: utter_show_options
 
 - rule: Usuário deseja ver o histórico de acompanhante
   steps:

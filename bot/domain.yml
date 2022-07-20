@@ -41,12 +41,23 @@ forms:
 
 responses:
   utter_fun_fact:
-  - text: "Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né? Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas.\nDeseja saber mais?"
+  - text: "Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né? Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas."
+  - text: "O aniversário de Harry Potter é dia 31 de julho, igual o da escritora J.K.Rowling, baita coincidência!"
+  
+  utter_show_options:
+  - text: "Essas são as opções para continuar a conversa:"
     buttons:
-    - title: "Sim"
+    - title: "Tour pela escola"
+      payload: '/tour_intent'
+
+    - title: "Fato divertido"
       payload: '/fun_fact_intent'
-    - title: "Não"
-      payload: '/deny_intent'
+
+    - title: "Pesquisar personagem"
+      payload: '/goodbye_intent'
+
+    - title: "Nenhuma das opções"
+      payload: '/goodbye_intent'
 
   utter_greet:
   - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"

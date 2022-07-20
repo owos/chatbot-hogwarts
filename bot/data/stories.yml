@@ -28,5 +28,6 @@ stories:
   - action: utter_greet
   - intent: fun_fact_intent
   - action: utter_fun_fact
-  - intent: deny_intent
+  - action: utter_show_options
+  - intent: goodbye_intent 
   - action: utter_goodbye
