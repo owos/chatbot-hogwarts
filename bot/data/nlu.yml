@@ -11,6 +11,14 @@ nlu:
     - desejo visitar 
     - quero visitar
 
+- intent: fun_fact_intent
+  examples: |
+    - me conte uma curiosidade
+    - fato divertido
+    - gostaria de saber mais sobre Hogwarts
+    - quero saber um fato divertido
+    - quero uma curiosidade
+
 - intent: history_intent
   examples: |
     - mostre o historico
