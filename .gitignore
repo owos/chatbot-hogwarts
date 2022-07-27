@@ -6,6 +6,7 @@ actions/secrets.py
 actions/__pycache__
 .config
 .keras
+results
 
 # Dockerfile
 .ipynb
