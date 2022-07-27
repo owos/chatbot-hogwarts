@@ -31,3 +31,28 @@ stories:
   - action: utter_show_options
   - intent: goodbye_intent 
   - action: utter_goodbye
+
+
+- story: Alternando entre fluxos
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - intent: fun_fact_intent
+  - action: utter_fun_fact
+  - action: utter_show_options
+  - intent: tour_intent
+  - action: init_form
+  - active_loop: init_form
+  - slot_was_set:
+    - requested_slot: name_slot
+  - slot_was_set:
+    - name_slot: John
+  - slot_was_set:
+    - requested_slot: house_slot
+  - slot_was_set:
+    - house_slot: grifinoria
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_show_character
+  - action: utter_show_options

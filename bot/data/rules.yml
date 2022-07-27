@@ -2,6 +2,11 @@ version: "3.0"
 
 rules:
 
+- rule: Usuário diz oi
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+
 - rule: Usuário diz tchau 
   steps:
   - intent: goodbye_intent
@@ -32,6 +37,7 @@ rules:
   condition:
   - active_loop: init_form
   steps:
+  - intent: tour_intent
   - action: init_form
   - active_loop: null
   - slot_was_set:

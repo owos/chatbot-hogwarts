@@ -1,5 +1,4 @@
-version: "3.0"
-
+version: "3.1"
 nlu:
 - intent: tour_intent
   examples: |
@@ -8,9 +7,8 @@ nlu:
     - conhecer as casas
     - mostre a escola
     - escola
-    - desejo visitar 
+    - desejo visitar
     - quero visitar
-
 - intent: fun_fact_intent
   examples: |
     - me conte uma curiosidade
@@ -18,14 +16,12 @@ nlu:
     - gostaria de saber mais sobre Hogwarts
     - quero saber um fato divertido
     - quero uma curiosidade
-
 - intent: history_intent
   examples: |
     - mostre o historico
     - histórico
     - dados passados
     - informações anteriores
-
 - intent: change_escort_intent
   examples: |
     - mudar a companhia
@@ -36,14 +32,12 @@ nlu:
     - troque o acompanhante
     - trocar companhia
     - trocar acompanhante
-
 - intent: choose_house_intent
   examples: |
     - [grifinoria](house)
     - [sonserina](house)
     - [lufa-lufa](house)
     - [corvinal](house)
-
 - intent: thanks_intent
   examples: |
     - obrigado
@@ -54,7 +48,6 @@ nlu:
     - muito obrigado
     - grato
     - ajudou muito
-
 - intent: greet_intent
   examples: |
     - olá
@@ -66,7 +59,6 @@ nlu:
     - dia
     - tarde
     - noite
-
 - intent: goodbye_intent
   examples: |
     - bye
@@ -74,7 +66,6 @@ nlu:
     - adeus
     - flw
     - até mais
-
 - intent: affirm_intent
   examples: |
     - s
@@ -84,7 +75,6 @@ nlu:
     - claro
     - exato
     - isso mesmo
-
 - intent: deny_intent
   examples: |
     - n
@@ -100,7 +90,7 @@ nlu:
     - nego
     - cancelo
     - negativo
-
+    - John
 - intent: bot_challenge_intent
   examples: |
     - você é um bot?
