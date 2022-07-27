@@ -43,6 +43,7 @@ responses:
   utter_fun_fact:
   - text: "Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né? Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas."
   - text: "O aniversário de Harry Potter é dia 31 de julho, igual o da escritora J.K.Rowling, baita coincidência!"
+  - text: "O castelo de Hogwarts possui vontade própria! Podendo surgir portas, janelas e até mesmo cômodos de acordo com a demanda, bem conveniente."
   
   utter_show_options:
   - text: "Essas são as opções para continuar a conversa:"
