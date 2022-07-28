@@ -18,6 +18,14 @@ nlu:
     - quero saber um fato divertido
     - quero uma curiosidade
 
+- intent: search_character_intent
+  examples: |
+    - pesquisar um personagem
+    - gostaria de saber mais sobre Harry
+    - detalhes sobre o personagem
+    - saber sobre o bruxo
+    - informações sobre o feitiçeiro
+
 - intent: history_intent
   examples: |
     - mostre o historico

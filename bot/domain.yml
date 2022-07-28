@@ -3,6 +3,7 @@ version: "3.0"
 intents:
   - tour_intent
   - fun_fact_intent
+  - search_character_intent
   - history_intent
   - change_escort_intent
   - choose_house_intent
@@ -55,7 +56,7 @@ responses:
       payload: '/fun_fact_intent'
 
     - title: "Pesquisar personagem"
-      payload: '/goodbye_intent'
+      payload: '/search_character_intent'
 
     - title: "Nenhuma das opções"
       payload: '/goodbye_intent'
@@ -70,7 +71,7 @@ responses:
       payload: '/fun_fact_intent'
 
     - title: "Pesquisar personagem"
-      payload: '/goodbye_intent'
+      payload: '/search_character_intent'
 
     - title: "Nenhuma das opções"
       payload: '/goodbye_intent'
