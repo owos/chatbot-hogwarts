@@ -33,13 +33,19 @@ rules:
   - intent: history_intent 
   - action: action_show_history
 
+- rule: Iniciar formúlario para escolher casa
+  steps:
+  - intent: tour_intent
+  - action: init_form
+  - active_loop: init_form
+
 - rule: Submeter formúlario com casa escolhida
   condition:
   - active_loop: init_form
   steps:
-  - intent: tour_intent
   - action: init_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
   - action: action_show_character
+  - action: utter_show_options
