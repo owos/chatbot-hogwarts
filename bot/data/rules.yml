@@ -2,27 +2,44 @@ version: "3.0"
 
 rules:
 
+- rule: Usuário diz oi
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+
 - rule: Usuário diz tchau 
   steps:
-  - intent: goodbye
+  - intent: goodbye_intent
   - action: utter_goodbye
 
 - rule: Usuário pergunta se é um bot
   steps:
-  - intent: bot_challenge
+  - intent: bot_challenge_intent
   - action: utter_iamabot
 
 - rule: Usuário agradece
   steps:
-  - intent: thanks
+  - intent: thanks_intent
   - action: utter_yr_welcome
 
-- rule: Usuário deseja ver o histórico
+- rule: Usuário deseja saber uma curiosidade
   steps:
-  - intent: request_history
+  - intent: fun_fact_intent
+  - action: utter_fun_fact
+  - action: utter_show_options
+
+- rule: Usuário deseja ver o histórico de acompanhante
+  steps:
+  - intent: history_intent 
   - action: action_show_history
 
-- rule: Submeter formúlario
+- rule: Iniciar formúlario para escolher casa
+  steps:
+  - intent: tour_intent
+  - action: init_form
+  - active_loop: init_form
+
+- rule: Submeter formúlario com casa escolhida
   condition:
   - active_loop: init_form
   steps:
@@ -30,4 +47,5 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: utter_form_submitted 
+  - action: action_show_character
+  - action: utter_show_options

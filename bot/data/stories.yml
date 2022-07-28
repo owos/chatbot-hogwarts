@@ -2,41 +2,36 @@ version: "3.0"
 
 stories:
 
-- story: Caminho principal 
+- story: Somente deseja saber uma curiosidade
   steps:
-  - intent: greet
+  - intent: greet_intent
   - action: utter_greet
-  - intent: request_tour
+  - intent: fun_fact_intent
+  - action: utter_fun_fact
+  - action: utter_show_options
+  - intent: goodbye_intent 
+  - action: utter_goodbye
+
+- story: Alternando entre fluxos
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - intent: fun_fact_intent
+  - action: utter_fun_fact
+  - action: utter_show_options
+  - intent: tour_intent
   - action: init_form
   - active_loop: init_form
   - slot_was_set:
-    - requested_slot: name
+    - requested_slot: name_slot
   - slot_was_set:
-    - name: Pedro
+    - name_slot: John
   - slot_was_set:
-    - name: Pedro
+    - requested_slot: house_slot
   - slot_was_set:
-    - requested_slot: house
-  - slot_was_set:
-    - house: grifinoria
-  - slot_was_set:
-    - house: grifinoria
+    - house_slot: grifinoria
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: utter_form_submitted
-  - intent: affirm
   - action: action_show_character
-  - checkpoint: check_solicitation
-
-- story: Usuário decide trocar acompanhante 
-  steps:
-  - checkpoint: check_solicitation
-  - intent: change_escort
-  - action: utter_ask_house
-  - intent: give_house
-    entities:
-    - house: grifinoria
-  - slot_was_set:
-    - house: grifinoria
-  - action: action_show_character
+  - action: utter_show_options

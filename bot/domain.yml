@@ -1,88 +1,105 @@
 version: "3.0"
 
 intents:
-  - request_tour
-  - request_history
-  - change_escort
-  - give_house
-  - give_name
-  - thanks
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - bot_challenge
+  - tour_intent
+  - fun_fact_intent
+  - history_intent
+  - change_escort_intent
+  - choose_house_intent
+  - thanks_intent
+  - greet_intent
+  - goodbye_intent
+  - affirm_intent
+  - deny_intent
+  - bot_challenge_intent
 
 entities:
-  - house
-  - name
+  - house_entity
 
 slots:
-  name:
+  name_slot:
     type: text
     influence_conversation: true
     mappings:
     - type: from_text 
       conditions:
       - active_loop: init_form
-        requested_slot: name
+        requested_slot: name_slot
 
-  house:
+  house_slot:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: house
+      entity: house_entity
 
 forms:
   init_form:
     required_slots:
-    - name
-    - house
+    - name_slot
+    - house_slot
 
 responses:
-  utter_greet:
-  - text: "Seja bem-vindo a Hogwarts, deseja um tour pela escola?"
+  utter_fun_fact:
+  - text: "Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né? Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas."
+  - text: "O aniversário de Harry Potter é dia 31 de julho, igual o da escritora J.K.Rowling, baita coincidência!"
+  - text: "O castelo de Hogwarts possui vontade própria! Podendo surgir portas, janelas e até mesmo cômodos de acordo com a demanda, bem conveniente."
+  
+  utter_show_options:
+  - text: "Essas são as opções para continuar a conversa:"
     buttons:
-    - title: "Sim"
-      payload: '/request_tour'
-    - title: "Não"
-      payload: '/goodbye'
+    - title: "Tour pela escola"
+      payload: '/tour_intent'
+
+    - title: "Fato divertido"
+      payload: '/fun_fact_intent'
+
+    - title: "Pesquisar personagem"
+      payload: '/goodbye_intent'
+
+    - title: "Nenhuma das opções"
+      payload: '/goodbye_intent'
+
+  utter_greet:
+  - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"
+    buttons:
+    - title: "Tour pela escola"
+      payload: '/tour_intent'
+
+    - title: "Fato divertido"
+      payload: '/fun_fact_intent'
+
+    - title: "Pesquisar personagem"
+      payload: '/goodbye_intent'
+
+    - title: "Nenhuma das opções"
+      payload: '/goodbye_intent'
 
   utter_goodbye:
   - text: "Foi um prazer conversar contigo, aproveite a visita."
-  - text: "Até mais, tenha uma boa estadia."
 
   utter_iamabot:
   - text: "Eu sou um bot-mágico, abastecido por Hogwarts."
   
-  utter_ask_name:
+  utter_ask_name_slot:
   - text: "Qual o seu nome?"
   - text: "Como posso te chamar?"
 
-  utter_ask_house:
-  - text: "Me informe a casa que deseja visitar {name}."
+  utter_ask_house_slot:
+  - text: "Me informe a casa que deseja visitar {name_slot}."
     buttons:
     - title: "Grifinória"
-      payload: '/give_house{{"house": "grifinoria"}}'
+      payload: '/choose_house_intent{{"house_entity": "grifinoria"}}'
     - title: "Sonserina"
-      payload: '/give_house{{"house": "sonserina"}}'
+      payload: '/choose_house_intent{{"house_entity": "sonserina"}}'
     - title: "Lufa-lufa"
-      payload: '/give_house{{"house": "lufa-lufa"}}'
+      payload: '/choose_house_intent{{"house_entity": "lufa-lufa"}}'
     - title: "Corvinal"
-      payload: '/give_house{{"house": "corvinal"}}'
+      payload: '/choose_house_intent{{"house_entity": "corvinal"}}'
 
   utter_yr_welcome:
-  - text: "Pode contar comigo."
   - text: "Foi um prazer ajudar."
 
-  utter_form_submitted:
-  - text: "Certo, deseja conhecer a pessoa que vai te acompanhar?"
-    buttons:
-    - title: "Sim"
-      payload: "/affirm"
-    - title: "Não"
-      payload: "/deny"
 
 actions:
   - action_show_character
