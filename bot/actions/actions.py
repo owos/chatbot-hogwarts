@@ -24,13 +24,13 @@ collection = db[secrets["COL_NAME"]]
 #############
 def verify_house(house):
   if house in "grifinoriagrifinóriagriffy":
-    return "Gryffindor"
+    return "gryffindor"
   elif house in "sonserina":
-    return "Slytherin"
+    return "slytherin"
   elif house in "lufa-lufalufa lufa":
-    return "Hufflepuff"
+    return "hufflepuff"
   elif house in "corvinal":
-    return "Ravenclaw"
+    return "ravenclaw"
 
 ###########
 # ACTIONS #
@@ -47,13 +47,12 @@ class ActionShowCharacter(Action):
         casa = tracker.get_slot("house_slot")
         house = verify_house(casa.lower())
 
-        # Fazendo a requisição na API
-        api_url = f"http://hp-api.herokuapp.com/api/characters/house/{house}"
-        response = requests.get(api_url)
-        house = response.json()
+        db = client[secrets["DB_HOUSES"]]
+        collection = db[house]
 
-        # Gerando um personagem random de 1 a 15
-        character = house[randint(1, 15)]
+        # Selecionando um personagem aleatório do BD
+        random_cursor = collection.aggregate([ {"$sample": {"size": 1}}]) 
+        character = list(random_cursor)[0]
 
         dispatcher.utter_message(image=character['image'])
 
@@ -62,14 +61,6 @@ class ActionShowCharacter(Action):
           dispatcher.utter_message(text=f"{character['name']} será seu acompanhante, ele vai te mostrar {casa.title()}.")
         else:
           dispatcher.utter_message(text=f"{character['name']} será sua acompanhante, ela vai te mostrar {casa.title()}.")
-
-        # Enviando personagem para o BD
-        character_simplified = {'name': character['name'],
-                        'actor': character['actor'],
-                        'house': character['house'],
-                        'yearOfBirth': character['yearOfBirth']}
-
-        collection.insert_one(character_simplified)
 
         return []
 
