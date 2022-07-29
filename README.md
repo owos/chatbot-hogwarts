@@ -15,7 +15,7 @@
 ## Funcionalidades
 - [x] Fornecer tour pela escola
 - [x] Contar curiosidades sobre Hogwarts
-- [ ] Pesquisar personagem específico
+- [x] Mostrar histórico de visitas
 
 ---
 
