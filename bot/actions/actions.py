@@ -56,12 +56,15 @@ class ActionShowCharacter(Action):
         else:
           dispatcher.utter_message(text=f"{character['name']} será sua acompanhante, ela vai te mostrar {casa.title()}.")
 
-        # Atualizando o histórico do BD
         collection = db["history"]
 
         query = {"house": house}
         house_history = collection.find_one(query)
 
+        # Descrição da casa
+        dispatcher.utter_message(house_history["description"])
+
+        # Atualizando o histórico do BD
         new_counter = house_history["counter"] + 1
         new_value = {"$set": {"counter": new_counter}}
         collection.update_one(query, new_value)
@@ -77,6 +80,8 @@ class ActionShowHistory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+          dispatcher.utter_message(text="Quem você achou que seria a casa mais visitada?")
+          
           collection = db["history"]
 
           # Acessando o histórico casa por casa
