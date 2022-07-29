@@ -6,10 +6,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from .secrets import secrets
 
-# Requisição na API
-import requests
-from random import randint
-
 ################## 
 # BANCO DE DADOS #
 ################## 
@@ -17,7 +13,6 @@ from pymongo import MongoClient
 
 client = MongoClient(secrets["CLUSTER"])
 db = client[secrets["DB_NAME"]]
-collection = db[secrets["COL_NAME"]]
 
 #############
 # FUNCTIONS #
@@ -47,7 +42,6 @@ class ActionShowCharacter(Action):
         casa = tracker.get_slot("house_slot")
         house = verify_house(casa.lower())
 
-        db = client[secrets["DB_HOUSES"]]
         collection = db[house]
 
         # Selecionando um personagem aleatório do BD
@@ -62,6 +56,16 @@ class ActionShowCharacter(Action):
         else:
           dispatcher.utter_message(text=f"{character['name']} será sua acompanhante, ela vai te mostrar {casa.title()}.")
 
+        # Atualizando o histórico do BD
+        collection = db["history"]
+
+        query = {"house": house}
+        house_history = collection.find_one(query)
+
+        new_counter = house_history["counter"] + 1
+        new_value = {"$set": {"counter": new_counter}}
+        collection.update_one(query, new_value)
+
         return []
 
 class ActionShowHistory(Action):
@@ -73,10 +77,10 @@ class ActionShowHistory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-          dispatcher.utter_message(text="- Histórico dos acompanhantes")
+          collection = db["history"]
 
-          # Acessando o histórico
+          # Acessando o histórico casa por casa
           for data in collection.find():
-            dispatcher.utter_message(text=f"{data['name']} de {data['house']}.")
+            dispatcher.utter_message(text=f"{data['house'].title()} teve {data['counter']} visitas.")
 
           return []

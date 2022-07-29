@@ -32,6 +32,7 @@ rules:
   steps:
   - intent: history_intent 
   - action: action_show_history
+  - action: utter_show_options
 
 - rule: Iniciar formúlario para escolher casa
   steps:

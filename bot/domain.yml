@@ -3,7 +3,6 @@ version: "3.0"
 intents:
   - tour_intent
   - fun_fact_intent
-  - search_character_intent
   - history_intent
   - change_escort_intent
   - choose_house_intent
@@ -55,8 +54,8 @@ responses:
     - title: "Fato divertido"
       payload: '/fun_fact_intent'
 
-    - title: "Pesquisar personagem"
-      payload: '/search_character_intent'
+    - title: "Histórico de visitas "
+      payload: '/history_intent'
 
     - title: "Nenhuma das opções"
       payload: '/goodbye_intent'
@@ -70,8 +69,8 @@ responses:
     - title: "Fato divertido"
       payload: '/fun_fact_intent'
 
-    - title: "Pesquisar personagem"
-      payload: '/search_character_intent'
+    - title: "Histórico de visitas"
+      payload: '/history_intent'
 
     - title: "Nenhuma das opções"
       payload: '/goodbye_intent'
