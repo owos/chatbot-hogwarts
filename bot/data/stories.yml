@@ -20,8 +20,8 @@ stories:
   - action: utter_fun_fact
   - action: utter_show_options
   - intent: tour_intent
-  - action: init_form
-  - active_loop: init_form
+  - action: tour_form
+  - active_loop: tour_form
   - slot_was_set:
     - requested_slot: name_slot
   - slot_was_set:

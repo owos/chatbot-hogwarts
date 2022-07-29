@@ -24,7 +24,7 @@ slots:
     mappings:
     - type: from_text 
       conditions:
-      - active_loop: init_form
+      - active_loop: tour_form
         requested_slot: name_slot
 
   house_slot:
@@ -35,7 +35,7 @@ slots:
       entity: house_entity
 
 forms:
-  init_form:
+  tour_form:
     required_slots:
     - name_slot
     - house_slot
