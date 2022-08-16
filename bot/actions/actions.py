@@ -79,13 +79,15 @@ class ActionShowHistory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-          dispatcher.utter_message(text="Quem você achou que seria a casa mais visitada?")
           
           collection = db["history"]
 
+          historico_das_casas = "Qual você achou que seria a casa mais visitada?\n"
+
           # Acessando o histórico casa por casa
           for data in collection.find():
-            dispatcher.utter_message(text=f"{data['house'].title()} teve {data['counter']} visitas.")
+            historico_das_casas += f"- {data['house'].title()} teve {data['counter']} visitas.\n"
+
+          dispatcher.utter_message(text=historico_das_casas)
 
           return []
