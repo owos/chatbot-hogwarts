@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hogwarts</title>
+        <title>Chatbot Mágico</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <center>
             <header>
-                <h1>Chatbot Mágico de Hogwarts</h1>
-                Clique no chat do canto inferior direito para começar a conversa.
+                <h1>Escola de Magia e Bruxaria Hogwarts</h1>
+                Aguarde o chat aparecer no canto direito inferior para começar a conversa...
             </header>
             <img id="hogwarts-logo" src="./assets/hogwarts-logo.png" alt="Hogwarts Logo">
         </center>
-<!-- Local -->
-        <div id="rasa-chat-widget" data-websocket-url="http://localhost:5005/"></div>
-<!-- Okteto 
-        <div id="rasa-chat-widget" data-websocket-url="https://yournamespace.cloud.okteto.net/"></div>
--->
-        <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+        <div id="webchat"></div>
+        <script>!(function () {
+        let e = document.createElement("script"),
+            t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+            "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+            (e.async = !0),
+            (e.onload = () => {
+            window.WebChat.default(
+                {
+                customData: { language: "pt" },
+                socketUrl: "http://localhost:5005",
+                socketPath: "/socket.io/",
+                title: "Chatbot Mágico",
+                subtitle: "",
+                inputTextFieldHint: "Digite uma mensagem...",
+                showFullScreenButton: true,
+                displayUnreadCount: true,
+                params:{"storage": "session"}
+                },
+                null
+            );
+            }),
+            t.insertBefore(e, t.firstChild);
+        })();
+        </script>
     </body>
 </html>
