@@ -2,6 +2,69 @@ version: "3.1"
 
 nlu:
 
+# intents - gerais
+- intent: greet_intent
+  examples: |
+    - olá
+    - oi
+    - eae
+    - bom dia
+    - boa tarde
+    - boa noite
+    - dia
+    - tarde
+    - noite
+
+- intent: goodbye_intent
+  examples: |
+    - bye
+    - tchau
+    - adeus
+    - flw
+    - até mais
+
+- intent: thanks_intent
+  examples: |
+    - obrigado
+    - vlw
+    - brigado
+    - bgd
+    - agradecido
+    - muito obrigado
+    - grato
+    - ajudou muito
+
+- intent: affirm_intent
+  examples: |
+    - s
+    - sim
+    - confirmo
+    - afirmo
+    - claro
+    - exato
+    - isso mesmo
+
+- intent: deny_intent
+  examples: |
+    - n
+    - não
+    - nao
+    - não quero
+    - nenhum
+    - nunca
+    - jamais
+    - nego
+    - cancelo
+    - negativo
+
+- intent: bot_challenge_intent
+  examples: |
+    - você é um bot?
+    - você é um humano?
+    - estou falando com um bot?
+    - estou falando com um humano?
+
+# intents - fluxos
 - intent: tour_intent
   examples: |
     - quero um tour
@@ -44,64 +107,3 @@ nlu:
     - [sonserina](house)
     - [lufa-lufa](house)
     - [corvinal](house)
-
-- intent: thanks_intent
-  examples: |
-    - obrigado
-    - vlw
-    - brigado
-    - bgd
-    - agradecido
-    - muito obrigado
-    - grato
-    - ajudou muito
-
-- intent: greet_intent
-  examples: |
-    - olá
-    - oi
-    - eae
-    - bom dia
-    - boa tarde
-    - boa noite
-    - dia
-    - tarde
-    - noite
-
-- intent: goodbye_intent
-  examples: |
-    - bye
-    - tchau
-    - adeus
-    - flw
-    - até mais
-
-- intent: affirm_intent
-  examples: |
-    - s
-    - sim
-    - confirmo
-    - afirmo
-    - claro
-    - exato
-    - isso mesmo
-
-- intent: deny_intent
-  examples: |
-    - n
-    - não
-    - nao
-    - não quero
-    - nenhum
-    - nunca
-    - jamais
-    - nego
-    - cancelo
-    - negativo
-
-- intent: bot_challenge_intent
-  examples: |
-    - você é um bot?
-    - você é um humano?
-    - estou falando com um bot?
-    - estou falando com um humano?
