@@ -1,17 +1,19 @@
 version: "3.1"
 
 intents:
+# intents - gerais
+  - greet_intent
+  - goodbye_intent
+  - thanks_intent
+  - affirm_intent
+  - deny_intent
+  - bot_challenge_intent
+# intents - fluxos
   - tour_intent
   - fun_fact_intent
   - history_intent
   - change_escort_intent
   - choose_house_intent
-  - thanks_intent
-  - greet_intent
-  - goodbye_intent
-  - affirm_intent
-  - deny_intent
-  - bot_challenge_intent
 
 entities:
   - house_entity
@@ -41,11 +43,32 @@ forms:
 
 responses:
   utter_fun_fact:
-  - text: "Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né? Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas."
-  - text: "O aniversário de Harry Potter é dia 31 de julho, igual o da escritora J.K.Rowling, baita coincidência!"
-  - text: "O castelo de Hogwarts possui vontade própria! Podendo surgir portas, janelas e até mesmo cômodos de acordo com a demanda, bem conveniente."
-  - text: "Os futuros estudantes de Hogwarts são escolhidos por uma pena e livro mágicos, sempre que alguém demonstra o menor sinal de mágia a pena rapidamente procura escrever seu nome no livro, esse por outro lado sendo mais restrito, não permite qualquer um sendo escrito nele."
-  - text: "Normalmente, as crianças bruxas são educadas em casa, não vão a escola, até irem a Hogwarts aos 11 anos, pois não é seguro que elas pudessem guardar o segredo de suas verdadeiras identidades de seus colegas trouxas. Os Weasley, por exemplo, foram educados caseiramente pelo Sra. Weasley."
+  - text: |-
+      Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né?
+
+      Os trouxas somente conseguem ver um campo cheio de irregularides e ruínas.
+
+  - text: |-
+      O aniversário de Harry Potter é dia 31 de julho, igual o da escritora J.K.Rowling, baita coincidência!
+
+  - text: |-
+      O castelo de Hogwarts possui vontade própria!
+
+      Podendo surgir portas, janelas e até mesmo cômodos de acordo com a demanda, bem conveniente.
+
+  - text: |-
+      Os futuros estudantes de Hogwarts são escolhidos por pena e livro mágicos.
+      
+      Sempre que alguém demonstra o menor sinal de mágia a pena rapidamente procura escrever seu nome no livro.
+      
+      O livro por outro lado sendo mais restrito, não permite qualquer nome sendo escrito nele.
+
+  - text: |-
+      Normalmente, as crianças bruxas são educadas em casa, não vão a escola, até irem a Hogwarts aos 11 anos.
+      
+      Pois não é seguro que elas possam revelar o segredo de suas verdadeiras identidades aos seus colegas trouxas.
+      
+      Os Weasley, por exemplo, foram educados caseiramente pelo Sra. Weasley.
   
   utter_show_options:
   - text: "Essas são as opções para continuar a conversa:"
