@@ -2,6 +2,7 @@ version: "3.1"
 
 rules:
 
+# rules - gerais
 - rule: Usuário diz oi
   steps:
   - intent: greet_intent
@@ -12,16 +13,22 @@ rules:
   - intent: goodbye_intent
   - action: utter_goodbye
 
-- rule: Usuário pergunta se é um bot
-  steps:
-  - intent: bot_challenge_intent
-  - action: utter_iamabot
-
 - rule: Usuário agradece
   steps:
   - intent: thanks_intent
   - action: utter_yr_welcome
 
+- rule: Usuário pergunta se é um bot
+  steps:
+  - intent: bot_challenge_intent
+  - action: utter_iamabot
+
+- rule: Bot não compreende a fala do usuário
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+# rules - fluxos
 - rule: Usuário deseja saber uma curiosidade
   steps:
   - intent: fun_fact_intent

@@ -42,6 +42,34 @@ forms:
     - house_slot
 
 responses:
+# responses - gerais
+  utter_greet:
+  - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"
+    buttons:
+    - title: "Tour pela escola"
+      payload: '/tour_intent'
+
+    - title: "Fato divertido"
+      payload: '/fun_fact_intent'
+
+    - title: "Histórico de visitas"
+      payload: '/history_intent'
+
+    - title: "Nenhuma das opções"
+      payload: '/goodbye_intent'
+
+  utter_goodbye:
+  - text: "Foi um prazer conversar contigo, aproveite a visita."
+
+  utter_yr_welcome:
+  - text: "Foi um prazer ajudar."
+
+  utter_please_rephrase:
+  - text: "Não consegui entender, tente reformular sua frase."
+
+  utter_iamabot:
+  - text: "Eu sou um bot-mágico, abastecido por Hogwarts."
+# responses - fluxos
   utter_fun_fact:
   - text: |-
       Graças a um feitiço Hogwarts somente é visível pelas pessoas da escola, ufa, ainda bem né?
@@ -84,27 +112,6 @@ responses:
 
     - title: "Nenhuma das opções"
       payload: '/goodbye_intent'
-
-  utter_greet:
-  - text: "Seja bem-vindo a Hogwarts, como posso te ajudar?"
-    buttons:
-    - title: "Tour pela escola"
-      payload: '/tour_intent'
-
-    - title: "Fato divertido"
-      payload: '/fun_fact_intent'
-
-    - title: "Histórico de visitas"
-      payload: '/history_intent'
-
-    - title: "Nenhuma das opções"
-      payload: '/goodbye_intent'
-
-  utter_goodbye:
-  - text: "Foi um prazer conversar contigo, aproveite a visita."
-
-  utter_iamabot:
-  - text: "Eu sou um bot-mágico, abastecido por Hogwarts."
   
   utter_ask_name_slot:
   - text: "Qual o seu nome?"
@@ -121,10 +128,6 @@ responses:
       payload: '/choose_house_intent{{"house_entity": "lufa-lufa"}}'
     - title: "Corvinal"
       payload: '/choose_house_intent{{"house_entity": "corvinal"}}'
-
-  utter_yr_welcome:
-  - text: "Foi um prazer ajudar."
-
 
 actions:
   - action_show_character
